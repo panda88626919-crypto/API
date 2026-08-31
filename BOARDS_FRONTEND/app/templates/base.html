@@ -1,0 +1,34 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {% block stylesheet %}{% endblock %}
+</head>
+<body>
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
+  </div>
+</nav>
+
+<div class="container">
+<ol class="breadcrumb my-4">
+    {% block breadcrumb %}
+    {% endblock %}
+</ol>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+{% endblock body %}
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
